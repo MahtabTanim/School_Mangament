@@ -8,3 +8,12 @@ class Teacher(models.Model):
     joining_date = models.DateField(null=False)
     educational_background = models.JSONField(default={"Bachelors": "BBA"}, blank=True)
     salary = models.FloatField(null=False, blank=False)
+
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField(null = True)
+    email = models.EmailField(max_length=100)
+    admission_date = models.DateField(null=True)
+    fee = models.FloatField(null=False,blank=False)
+
+Student(name = "tanim",age = 100,email= "sdfjhdsbf@fjsdjfsd.com",fee = 1000)

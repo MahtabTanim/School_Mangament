@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
-from .models import Teacher
+from .models import Teacher,Student
 
 
 # Create your views here.
 def show_teacher_info(request):
-    if request.mehtod == 'POST':
+    if request.method == 'POST':
         name = request.POST.get('name')
         age = request.POST.get('age')
         email = request.POST.get('email')
