@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Subjects</h2>
+    <ul class="list-group mb-4">
+        {% for value in subjects %}
+            <li class="list-group-item">{{ value }}</li>
+        {% endfor %}
+    </ul>
+    {% if registration_open %}
+        <div class="alert alert-success" role="alert">
+            We are currently accepting registrations.
+        </div>
+    {% endif %}
+    <form class="mb-4">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="fname" class="form-label">First name:</label>
+            <input type="text" class="form-control" id="fname" name="fname">
+        </div>
+        <div class="mb-3">
+            <label for="lname" class="form-label">Last name:</label>
+            <input type="text" class="form-control" id="lname" name="lname">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% if email %}
+        <div class="alert alert-info" role="alert">
+            We received your email {{ email }}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
