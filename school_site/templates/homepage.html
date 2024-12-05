@@ -12,11 +12,11 @@
             We are currently accepting registrations.
         </div>
     {% endif %}
-    <form class="mb-4">
+    <form class="mb-4" method = "POST">
         {% csrf_token %}
         <div class="mb-3">
             <label for="fname" class="form-label">First name:</label>
-            <input type="text" class="form-control" id="fname" name="fname">
+            <input type="text" class="form-control" id='fname' name="fname">
         </div>
         <div class="mb-3">
             <label for="lname" class="form-label">Last name:</label>
@@ -24,13 +24,28 @@
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="email" name="email">
+            <input type="email" class="form-control" id='email' name="email">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" name="form_type" value="form1">Submit</button>
     </form>
+
+    <form method = "POST"  class="mb-4">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="interested" class="form-label">Are you interested ?? </label>
+            <input type="checkbox" class="form-check-input" id='interested' name="interested">
+        </div>
+        <button type="submit" class="btn btn-primary" name="form_type" value="form2">Submit</button>  
+    </form>
+
+    <div>
+        <h2 class="mb-4">first name  : {{fname}}</h2>
+        <h2 class="mb-4">last name  : {{lname}}</h2>
+        <h2 class="mb-4">Email : {{email}}</h2>
+    </div>
     {% if email %}
         <div class="alert alert-info" role="alert">
-            We received your email {{ email }}
+            We received your email : {{ email }}
         </div>
     {% endif %}
 </div>

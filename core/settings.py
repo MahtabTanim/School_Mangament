@@ -1,13 +1,7 @@
-
-
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
- 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+SCHOOL_SITE_DIR = BASE_DIR / "school_site/templates"
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-e^#h5irla-xig)r_jgewy6pbnv=3sj6i#@b@t9s=z88+*&hz6y"
@@ -47,7 +41,7 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [SCHOOL_SITE_DIR],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

@@ -1,7 +1,6 @@
 from django.urls import path
 from django.contrib import admin
-from school_site import views
-
+from .import views
 
 urlpatterns = [
     path('homepage/',views.home_page,name='home_page'),
